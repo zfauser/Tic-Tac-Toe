@@ -6,3 +6,22 @@ html {
 h1 {
   text-align: center;
 }
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.box { 
+  height: 50px;
+  width: 50px;
+  background-color: #00599C;
+}
+
+.box:hover {
+  cursor: pointer;
+  background-color: #012D62;
+}
