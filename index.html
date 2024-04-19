@@ -5,21 +5,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Tic-Tac-Toe</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <h1>TTT</h1>
+  <nobr></nobr>
+  <div id="header">
+    <h1 id="title">TTT</h1>
+    <br>
+    <button id="instructions">Instructions</button>
+  </div>
+
+  <!--
+    Learned about "dialog" from mdn web docs: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+  -->
+  <dialog open>
+    <h1>Instructions</h1>
+      <p>Player X goes first. Click on a square to place an X. Player O goes next. Click on a square to place an O. The first player to get three in a row wins!</p>
+    <form method="dialog">
+      <button>OK</button>
+    </form>
+  </dialog>  
+  <h2 id="turn">X's Turn</h2>
   <div id="game-board">
-    <button class="box" id="row-1 col-1"></button>
-    <button class="box" id="row-1 col-2"></button>
-    <button class="box" id="row-1 col-3"></button>
-    <button class="box" id="row-2 col-1"></button>
-    <button class="box" id="row-2 col-2"></button>
-    <button class="box" id="row-2 col-3"></button>
-    <button class="box" id="row-3 col-1"></button>
-    <button class="box" id="row-3 col-2"></button>
-    <button class="box" id="row-3 col-3"></button>
+    <button class="box" id="r1 c1"></button>
+    <button class="box" id="r1 c2"></button>
+    <button class="box" id="r1 c3"></button>
+    <button class="box" id="r2 c1"></button>
+    <button class="box" id="r2 c2"></button>
+    <button class="box" id="r2 c3"></button>
+    <button class="box" id="r3 c1"></button>
+    <button class="box" id="r3 c2"></button>
+    <button class="box" id="r3 c3"></button>
+    <br>
+    <button class="hide" id="reset">Reset</button>
   </div>
   <script src="script.js"></script>
 </body>

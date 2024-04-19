@@ -1,6 +1,8 @@
 html {
   height: 100%;
   width: 100%;
+  font-family: 'Times New Roman', 'Times';
+  background-color: #012D62;
 }
 
 h1 {
@@ -24,4 +26,49 @@ h1 {
 .box:hover {
   cursor: pointer;
   background-color: #012D62;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+#header {
+  background-color: #00599c;
+  color: #fff;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#winner {
+  color: white;
+}
+
+#reset {
+  background-color: #00599c;
+  color: white;
+}
+
+.clicked {
+  background-color: #012D62;
+  color: white;
+  font-size: 200%;
+}
+
+.hide {
+  display: none;
+}
+
+#turn {
+  color: white;
+  text-align: center;
+}
+
+dialog button {
+  margin: 0 auto;
+  display: block;
 }
