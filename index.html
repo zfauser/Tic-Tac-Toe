@@ -14,19 +14,13 @@
   <div id="header">
     <h1 id="title">TTT</h1>
     <br>
-    <button id="instructions">Instructions</button>
-  </div>
-
-  <!--
-    Learned about "dialog" from mdn web docs: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-  -->
-  <dialog open>
-    <h1>Instructions</h1>
-      <p>Player X goes first. Click on a square to place an X. Player O goes next. Click on a square to place an O. The first player to get three in a row wins!</p>
+  </div> 
+  <br>
+  <div id="instructions-container">
     <form method="dialog">
-      <button>OK</button>
-    </form>
-  </dialog>  
+    <button id="instructions" >Instructions</button>
+  </form>
+  </div>
   <h2 id="turn">X's Turn</h2>
   <div id="game-board">
     <button class="box" id="r1 c1"></button>
