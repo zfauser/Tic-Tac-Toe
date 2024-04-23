@@ -84,3 +84,29 @@ dialog button {
   color: white;
   margin: 0;
 }
+
+#instructions-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#instructions-text {
+  color: white;
+}
+
+#stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0;
+}
+
+#stats-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0;
+}

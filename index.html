@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="icon" href="ttt-favicon.png" type="image/x-icon" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Tic-Tac-Toe</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  <nobr></nobr>
-  <div id="header">
-    <h1 id="title">TTT</h1>
-    <br>
-  </div> 
-  <br>
-  <div id="instructions-container">
-    <form method="dialog">
-    <button id="instructions" >Instructions</button>
-  </form>
-  </div>
-  <h2 id="turn">X's Turn</h2>
-  <div id="game-board">
-    <button class="box" id="r1 c1"></button>
-    <button class="box" id="r1 c2"></button>
-    <button class="box" id="r1 c3"></button>
-    <button class="box" id="r2 c1"></button>
-    <button class="box" id="r2 c2"></button>
-    <button class="box" id="r2 c3"></button>
-    <button class="box" id="r3 c1"></button>
-    <button class="box" id="r3 c2"></button>
-    <button class="box" id="r3 c3"></button>
-    <br>
-    <button class="hide" id="reset">Reset</button>
-  </div>
-  <script src="script.js"></script>
-</body>
-
+  <body>
+    <div id="header">
+      <h1 id="title">TTT</h1>
+      <br />
+    </div>
+    <br />
+    <div id="instructions-container">
+      <button id="instructions">Close Instructions</button>
+    </div>
+    <div id="instructions-text-container">
+      <div class="" id="instructions-text">
+        <ol>
+          <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+          <li>
+            One person plays as X and the other play is O. Players take turns
+            putting their marks in empty squares.
+          </li>
+          <li>
+            The first player to get 3 of their marks in a row in any direction
+            is the winner.
+          </li>
+          <li>
+            When all 9 squares are full, the game is over. If no player has 3
+            marks in a row, the game ends in a tie.
+          </li>
+          <li>Click on the Reset button to start a new game.</li>
+        </ol>
+      </div>
+    </div>
+    <h2 id="turn">X's Turn</h2>
+    <div id="game-board">
+      <button class="box" id="r1 c1"></button>
+      <button class="box" id="r1 c2"></button>
+      <button class="box" id="r1 c3"></button>
+      <button class="box" id="r2 c1"></button>
+      <button class="box" id="r2 c2"></button>
+      <button class="box" id="r2 c3"></button>
+      <button class="box" id="r3 c1"></button>
+      <button class="box" id="r3 c2"></button>
+      <button class="box" id="r3 c3"></button>
+      <br />
+      <button class="hide" id="reset">Reset</button>
+    </div>
+    <div id="stats-text-container">
+      <div id="stats-text">
+        <p id="x-wins">X Wins: 0</p>
+        <p id="o-wins">O Wins: 0</p>
+        <p id="ties">Ties: 0</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

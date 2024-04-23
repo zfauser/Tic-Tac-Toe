@@ -2,6 +2,12 @@ let turn = "X";
 let winner = "";
 let numOfTurns = 0;
 let tie = false;
+let xWins = 0;
+let oWins = 0;
+let ties = 0;
+let xWinPercent = 0;
+let oWinPercent = 0;
+let tiePercent = 0;
 
 let board = [
   ["", "", ""],
@@ -46,11 +52,18 @@ function checkWinner() {
   }
   if (numOfTurns === 9) {
     tie = true;
-    $("#turn").html("It's a tie!");
-    $("#reset").removeClass("hide");
     return true;
   }
   return false;
+}
+
+function refreshStats() {
+  xWinPercent = Math.round((xWins / (xWins + oWins + ties)) * 100);
+  oWinPercent = Math.round((oWins / (xWins + oWins + ties)) * 100);
+  tiePercent = Math.round((ties / (xWins + oWins + ties)) * 100);
+  $("#x-wins").html("X Wins: " + xWins + " (" + xWinPercent + "%)");
+  $("#o-wins").html("O Wins: " + oWins + " (" + oWinPercent + "%)");
+  $("#ties").html("Ties: " + ties + " (" + tiePercent + "%)");
 }
 
 $(document).ready(function () {
@@ -64,6 +77,12 @@ $(document).ready(function () {
   );
   $("#instructions").click(
     function () {
+      if ($(this).html() === "Open Instructions") {
+        $(this).html("Close Instructions");
+      } else {
+        $(this).html("Open Instructions");
+      }
+      $("#instructions-text").slideToggle();
     }
   )
   $(".box").click(function () {
@@ -83,29 +102,39 @@ $(document).ready(function () {
     $(this).prop("disabled", true);
     if (checkWinner() && !tie) {
       $("#turn").html(winner + " wins!");
+      if (winner === "X") {
+        xWins++;
+      } else {
+        oWins++;
+      }
       $("#reset").removeClass("hide");
       $(".box").prop("disabled", true);
+      refreshStats();
       return;
     }
     if (tie) {
+      ties++;
+      $("#turn").html("It's a tie!");
+      $("#reset").removeClass("hide");
       $(".box").prop("disabled", true);
+      refreshStats();
       return;
     }
   });
   $("#reset").click(function () {
     board = [
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""]
-    ];
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""],
+    ]
     $(".box").html("");
     $(".box").removeClass("clicked");
-    $(".box").prop("disabled", false);
     $("#reset").addClass("hide");
     $("#turn").html("X's turn");
+    $(".box").prop("disabled", false);
     turn = "X";
     winner = "";
     numOfTurns = 0;
-    console.log(numOfTurns)
+    tie = false;
   });
 });
